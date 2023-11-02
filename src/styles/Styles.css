@@ -1,0 +1,38 @@
+.copy-footer{
+    background-color: rgb(66, 66, 66) !important;
+}
+
+
+.contact_main_container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.container_map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+
+.contact_map{
+    width: 450px;
+    height: 450px;
+}
+
+@media (max-width: 1000px) {
+    .contact_main_container{
+        flex-direction: column !important;
+    }
+
+    .contact_map{
+        width: 300px;
+        height: 300px;
+    }
+}
