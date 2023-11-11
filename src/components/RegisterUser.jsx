@@ -88,7 +88,6 @@ export default function RegisterUser({ show, onHide }) {
       >
         Registrado correctamente
       </Alert>
-      
     </div>
   );
 }
