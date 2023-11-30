@@ -61,7 +61,8 @@ const FeaturedProducts = () => {
                   <div className="row">
                     <div className="col-12 d-flex justify-content-center">
                       <NavLink
-                        to={`/details/id:${result.id}`}
+                        // to={`/details/id:${result.id}`}
+                        to="/shop"
                         title="Vistazo Rápido"
                         className="bg"
                       >

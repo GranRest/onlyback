@@ -76,7 +76,7 @@ function ShoppingCart({ items, onRemoveToCart }) {
         `*Producto ${index + 1}*\n` +
         `*${product.name}* \n` +
         `Descripcion: ${product.description}\n` +
-        `Imagen: ${product.img}\n\n` +
+        `Imagen: https://www.onlybackstore.com/details/id:${product.id}\n\n` +
         `Precio Unitario: ${product.price}\n\n`;
     });
 

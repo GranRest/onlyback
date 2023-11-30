@@ -10,7 +10,6 @@ import { loadProductsFromFirebase } from "../api/loadProductFirebase";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import appFirebase from "../data/configFirebase";
 
-
 const Shop = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [dataCategory, setDataCategory] = useState([]);
@@ -19,7 +18,7 @@ const Shop = ({ onAddToCart }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("all");
- // const [showCartPreview, setShowCartPreview] = useState(false);
+  // const [showCartPreview, setShowCartPreview] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -171,6 +170,21 @@ const Shop = ({ onAddToCart }) => {
                 Aquí podrá revisar nuestro catálogo de productos.
               </p>
             </div>
+            <div className="container mt-4">
+              <div
+                className="alert alert-warning alert-dismissible fade show"
+                role="alert"
+              >
+                <strong>¡Oferta Especial!</strong> 10% de descuento en todas tus
+                compras.
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+            </div>
             <div className="data-table-header pb-4 justify-content-between p-2">
               <div className="col-s-12 col-sm-10 col-md-4 col-lg-3">
                 <select value={dataPerPage} onChange={handleChangepage}>
@@ -212,9 +226,13 @@ const Shop = ({ onAddToCart }) => {
                   <div className="floating col-sm-6 col-lg-3 " key={result.id}>
                     <div className="single-publication border rounded">
                       <figure>
-                        <a href="#?" className="product-image">
+                        <NavLink
+                          to={`/details/id:${result.id}`}
+                          title="Vistazo Rápido"
+                          className="product-image"
+                        >
                           <img src={result.img} alt="Publication" />
-                        </a>
+                        </NavLink>
                         <ul>
                           <li>
                             <a
