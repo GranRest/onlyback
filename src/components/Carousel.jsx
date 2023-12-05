@@ -2,8 +2,15 @@
 import { useEffect, useState } from "react";
 import { loadProducts } from "../api/loadProducts";
 import axios from "axios";
-import { getFirestore, query,collection, getDocs, limit } from "firebase/firestore";
+import {
+  getFirestore,
+  query,
+  collection,
+  getDocs,
+  limit,
+} from "firebase/firestore";
 import appFirebase from "../data/configFirebase";
+import { NavLink } from "react-router-dom";
 
 const Carousel = () => {
   const [products, setProducts] = useState([]);
@@ -99,6 +106,16 @@ const Carousel = () => {
                     </h1>
                     <h3 className="h2">{product.description}</h3>
                     <p>{product.longdesc}</p>
+                    <p className="text-center">
+                      <NavLink
+                        to="/shop"
+                        activeclassname="active"
+                        exact="true"
+                        className="btn-login btn btn-success"
+                      >
+                        Ir a la tienda
+                      </NavLink>
+                    </p>
                   </div>
                 </div>
               </div>
